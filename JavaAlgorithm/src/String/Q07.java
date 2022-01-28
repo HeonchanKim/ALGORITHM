@@ -5,9 +5,15 @@ import java.util.Scanner;
 public class Q07 {
 	public String solution(String str) {
 		String answer = "";
-		char[] x = str.toLowerCase().toCharArray();
-		int lt = 0, rt =0 ;
-		
+		String lowStr = str.toLowerCase();
+		StringBuffer sb = new StringBuffer(str.toLowerCase());
+		String x = sb.reverse().toString();
+
+		if(lowStr.equals(x.toLowerCase())) {
+			answer = "YES";
+		}else {
+			answer = "NO";			
+		}
 		
 		return answer;
 	}
