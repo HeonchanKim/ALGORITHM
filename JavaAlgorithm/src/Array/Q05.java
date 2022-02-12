@@ -3,29 +3,22 @@ package Array;
 import java.util.Scanner;
 
 public class Q05 {
-	public int solution(int num) {
-		int answer = 0;
-		
-		for (int i = 1; i <= num; i++) {
-			boolean c = true;
-			for (int j = i-1; j > 1; j--) {
-				if(i%j==0) {
-					c=false;
-					break;
-				}
+	public int solution(int n){
+		int cnt=0;
+		int[] ch = new int[n+1];
+		for(int i=2; i<=n; i++){
+			if(ch[i]==0){
+				cnt++;
+				for(int j=i; j<=n; j=j+i) ch[j]=1;
 			}
-			if(c==true) {
-				answer++;
-			}
-			
 		}
-		
-		return answer;
+		return cnt;
 	}
+	
 	public static void main(String[] args) {
 		Q05 T = new Q05();
 		Scanner kb = new Scanner(System.in);
-		int num = kb.nextInt();
-		System.out.println(T.solution(num));
+		int n=kb.nextInt();
+		System.out.println(T.solution(n));
 	}
 }
