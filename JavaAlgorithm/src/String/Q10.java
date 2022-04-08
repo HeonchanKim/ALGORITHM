@@ -45,7 +45,7 @@ public class Q10 {
 		
 		answer = String.copyValueOf(c);
 		for (int i = 0; i < answer.length()-1; i++) {
-			answer.charAt(i);
+			answer+=answer.charAt(i)+" ";
 		}
 		return answer;
 	}
