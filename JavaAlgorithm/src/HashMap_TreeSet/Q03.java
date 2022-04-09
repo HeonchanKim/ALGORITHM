@@ -1,6 +1,7 @@
 package HashMap_TreeSet;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -13,7 +14,7 @@ public class Q03 {
         for(int i = 0;i < k;i++){
             ArrayList<Integer> list = new ArrayList<>();
             
-            for(int j = i;i < k+i;j++){
+            for(int j = i;j < k+i;j++){
                 list.add(arr[j]);
             }
 
@@ -23,16 +24,16 @@ public class Q03 {
                     cnt--;
                 }
                 rt++;
-                if(rt > k){
-                    rt = 1;
+                if(rt == k){
                     lt++;
+                    rt = lt+1;
                 }
             }
-
             map.put(list,cnt);
         }
 
-
+        Collection<Integer> values = map.values();
+        answer = values.toString();
         return answer;
     }
 
