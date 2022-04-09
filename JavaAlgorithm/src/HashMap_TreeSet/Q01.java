@@ -43,7 +43,6 @@ public class Q01 {
         Scanner kb = new Scanner(System.in);
         int n = kb.nextInt();
         String str = kb.next();
-        kb.next();
         System.out.print(T.solution(n,str));
         kb.close();
     }
